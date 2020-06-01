@@ -20,18 +20,20 @@ $app->post('/bot', function() use($app) {
 	if(!$data )
 		return 'nioh';
 
-	if( $data->secret !== getnv('VK_SECRET_TOKEN') && $data->type !=='confirmation')
+	if( $data->secret !== getnv('VK_SECRET_TOKEN') && $data->type !== 'confirmation' )
 		return 'nioh';
 
-	switch ( $data->type ) 
+	switch( $data->type ) 
 	{
 		case 'confirmation':
-			return getenv('VK_CONFIRMATTON_CODE');
+			return getenv('VK_CONGIRMATTON_CODE');
 			break;
 
 		case 'massage_new':
 
 
+
+			break;
 	}
 
 	return "nioh";
